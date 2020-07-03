@@ -72,8 +72,9 @@ switch ('' + argv[1]) {
 }
 
 const up = flags && ('' + flags).includes('u')
+const force = flags && ('' + flags).includes('f')
 block = block || 'iron_block'
-const options = { region, block, up }
+const options = { region, block, up, force }
 
 request(radius, center, (s, n) => {
   return `(way[railway~"^.*$"](${s.join(',')},${n.join(',')});>;);out;`
@@ -83,7 +84,7 @@ function rails (data) {
   const lines = decode(data)
   const insideRegion_ = insideRegion(options)
   const findGround_ = findGround(ignoredBlocks, blocks)
-  const naturalBlock_ = naturalBlock(allowedBlocks, blocks)
+  const naturalBlock_ = naturalBlock(options, allowedBlocks, blocks)
   const oneBlockAbove_ = oneBlockAbove(options)
   const setBlock_ = setBlock(blocks, context, block)
   draw(lines, (pos) => {

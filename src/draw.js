@@ -25,7 +25,8 @@ const blocks = context.remember()
 const [block, flags] = argv.slice(2)
 
 const up = flags && ('' + flags).includes('u')
-const options = { block, up }
+const force = flags && ('' + flags).includes('f')
+const options = { block, up, force }
 
 player.print('§7Please wait...')
 
@@ -56,7 +57,7 @@ function process (filename) {
 function drawRaw (data) {
   const lines = decode(data)
   const findGround_ = findGround(ignoredBlocks, blocks)
-  const naturalBlock_ = naturalBlock(allowedBlocks, blocks)
+  const naturalBlock_ = naturalBlock(options, allowedBlocks, blocks)
   const oneBlockAbove_ = oneBlockAbove(options)
   const setBlock_ = setBlock(blocks, context, block)
   draw(lines, (pos) => {

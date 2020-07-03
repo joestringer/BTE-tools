@@ -139,6 +139,7 @@ Traces any imported shape of an OpenStreetMap query - railroads, roads, etc.
 
 Flags :
  - **u** (up): Draws a block above
+ - **f** (force): Draws block even if it collides with non-natural blocks
 
 Setup :
  - Create a `drawings` folder inside `/config/worldedit`.
@@ -173,6 +174,7 @@ Modes:
 
 Flags :
  - **u** (up): Draws a block above
+ - **f** (force): Draws block even if it collides with non-natural blocks
 
 Examples :
 

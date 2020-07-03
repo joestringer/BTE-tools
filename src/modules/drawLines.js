@@ -53,7 +53,10 @@ function insideRegion (options) {
   return (pos) => true
 }
 
-function naturalBlock (allowedBlocks, blocks) {
+function naturalBlock (options, allowedBlocks, blocks) {
+  if (options.force) {
+    return (pos) => true
+  }
   return (pos) => allowedBlocks.includes(blocks.getBlock(pos).id)
 }
 
