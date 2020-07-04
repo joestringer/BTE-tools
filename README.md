@@ -247,6 +247,34 @@ Examples :
 
 ![](images/hedges-.png)
 
+### barriers
+
+```fix
+/cs barrier <mode> [...args] [block] [height]
+```
+
+Traces all barriers/walls in an area
+
+Modes:
+ - **radius** Select barriers in a radius `<radius> [block] [height]`
+ - **region** Select barriers in a region `[block] [height]`
+ - **regionEdge** Select barriers in a region and draw only in the defined region `[block] [height]`
+
+
+Examples :
+
+```fix
+/cs barrier radius 7
+/cs barrier radius 50 cobblestone 3
+/cs barrier region
+/cs barrier region cobblestone 3
+/cs barrier regionEdge
+/cs barrier regionEdge cobblestone 3
+```
+
+![](images/barrier.png)
+
+
 
 ## Find a railroad name
 
