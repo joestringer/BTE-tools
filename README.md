@@ -226,7 +226,7 @@ Flags :
 /cs hedge <mode> [...args] [block] [height]
 ```
 
-Traces all railroads in an area
+Traces all farmland hedges in an area
 
 Modes:
  - **radius** Select hedges in a radius `<radius> [block] [height]`
